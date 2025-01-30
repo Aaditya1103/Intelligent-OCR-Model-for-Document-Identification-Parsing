@@ -39,20 +39,19 @@ The model is compiled using Adam optimizer and categorical cross-entropy loss.
 
 ## Installation
 To set up the environment and dependencies, follow these steps:
-
-
 Ensure that TensorFlow and OpenCV are installed:
 - **Clone Repository**:
 
-   `git clone https://github.com/your-repo/handwriting-recognition.git`
-  
-   `cd handwriting-recognition`
+   ```bash
+  git clone https://github.com/your-repo/handwriting-recognition.git
+  cd handwriting-recognition
+   
 - **Install Dependencies**:
   
    `pip install -r requirements.txt`
 - **Ensure that TensorFlow and OpenCV are installed**:
   
-   `pip install -r requirements.txt`
+   `pip install tensorflow opencv-python numpy scikit-learn`
 ---
 
 ## Installation and Setup
@@ -69,3 +68,41 @@ Ensure that TensorFlow and OpenCV are installed:
      ```bash
      pip install opencv-python-headless matplotlib pytesseract pillow easyocr
      ```
+## Directory Structure
+    handwriting-recognition/
+    │── data/
+    │   ├── train.npz
+    │   ├── val.npz
+    │   ├── test.npz
+    │
+    │── config/
+    │   ├── rec_chinese_lite_train.yaml
+    │
+    │── src/
+    │   ├── data_preprocessing.py
+    │   ├── model.py
+    │   ├── evaluation.py
+    │
+    │── namesplit.py
+    │── ocr.py    
+    │── name_identify.py
+    │── name_list.xlx
+    │── README.md
+    │── requirements.txt
+---
+## Troubleshooting
+**Issue**: Model training is slow or crashes due to memory issues.
+- **Solution**: Reduce batch size or use GPU acceleration (TensorFlow with CUDA).
+
+**Issue**: Test accuracy is lower than expected.
+- **Solution**:Check if labels are correctly encoded, increase dataset size, or tune hyperparameters.
+
+**Issue**: `ModuleNotFoundError` when running scripts.
+- **Solution**: Run `pip install -r requirements.txt` to ensure all dependencies are installed.
+---
+     
+## Future Improvements
+1. **Data Augmentation**: Introduce transformations (rotation, scaling, noise) to enhance generalization.
+2. **Hyperparameter Optimization**: Experiment with different architectures, activation functions, and optimizers.
+3. **Deployment**: Convert the model to TensorFlow Lite for mobile or web applications.
+4. **Additional Classes**: Extend the dataset beyond digits to include letters and symbols.
