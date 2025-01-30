@@ -1,0 +1,1 @@
+# Intelligent-OCR-Model-for-Document-Identification-Parsing
